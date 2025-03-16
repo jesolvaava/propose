@@ -1,0 +1,11 @@
+{
+    "name": "date-website",
+    "version": "1.0.0",
+    "description": "A simple website to ask for a date",
+    "scripts": {
+      "start": "serve"
+    },
+    "dependencies": {
+      "serve": "^14.0.0"
+    }
+  }
