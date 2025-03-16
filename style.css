@@ -1,14 +1,14 @@
-/* Rainbow gradient background */
+/* Romantic Gradient Background */
 body {
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Pacifico', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb, #8fd3f4, #96e6a1, #ffe29f);
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #ffdde1);
     background-size: 400% 400%;
-    animation: rainbow 10s ease infinite;
+    animation: rainbow 12s ease infinite;
     color: #dd15a1;
     text-align: center;
     overflow: hidden;
@@ -20,35 +20,50 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+/* Heart Background */
+.heart-bg::before {
+    content: '❤️';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 200px;
+    opacity: 0.1;
+}
+
 .container {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    animation: float 3s ease-in-out infinite;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
     100% { transform: translateY(0); }
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 10px;
-    color: #ff6f61;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #e63946;
+}
+
+h1 .love {
+    color: #ff4757;
+    text-shadow: 0 0 10px #ff4757;
 }
 
 p {
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #ff6f61;
+    margin-bottom: 30px;
+    color: #e63946;
 }
 
+/* Button Styling */
 .buttons {
     display: flex;
     gap: 20px;
@@ -56,23 +71,24 @@ p {
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 15px 40px;
+    font-size: 1.5rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Pacifico', cursive;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #yesButton {
-    background: #ff6f61;
+    background: #ff4757;
     color: white;
+    box-shadow: 0 0 20px #ff4757;
 }
 
 #yesButton:hover {
-    background: #ff4a3d;
+    background: #e63946;
     transform: scale(1.1);
 }
 
@@ -86,7 +102,14 @@ button {
     transform: scale(1.1);
 }
 
-/* Confetti animation */
+/* Romantic Illustration */
+.illustration img {
+    width: 200px;
+    margin-top: 30px;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* Floating Hearts Animation */
 .confetti {
     position: absolute;
     width: 100%;
@@ -99,26 +122,23 @@ button {
 }
 
 .confetti::before, .confetti::after {
-    content: '';
+    content: '💖';
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #ff6f61;
-    border-radius: 50%;
+    font-size: 30px;
     animation: confetti 5s linear infinite;
 }
 
 .confetti::before {
-    left: 10%;
+    left: 20%;
     animation-delay: 0s;
 }
 
 .confetti::after {
-    left: 90%;
+    left: 80%;
     animation-delay: 2.5s;
 }
 
 @keyframes confetti {
     0% { transform: translateY(0) rotate(0); }
     100% { transform: translateY(100vh) rotate(720deg); }
-}
+    }
