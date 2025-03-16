@@ -1,21 +1,21 @@
 const yesButton = document.getElementById('yesButton');
 const noButton = document.getElementById('noButton');
+const confetti = document.querySelector('.confetti');
+
+let yesButtonSize = 1;
 
 noButton.addEventListener('click', () => {
-    // Increase the size of the Yes button
-    const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = `${currentSize * 1.2}px`;
+    yesButtonSize += 0.4;
+    yesButton.style.transform = `scale(${yesButtonSize})`;
 
-    // Move the No button to a random position
-    const maxX = window.innerWidth - noButton.offsetWidth;
-    const maxY = window.innerHeight - noButton.offsetHeight;
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
-    noButton.style.position = 'absolute';
-    noButton.style.left = `${randomX}px`;
-    noButton.style.top = `${randomY}px`;
+    if (yesButtonSize >= 2.5) {
+        noButton.style.display = 'none';
+    }
 });
 
 yesButton.addEventListener('click', () => {
-    alert("Yay! I'm so happy! 😊");
+    confetti.style.display = 'block';
+    setTimeout(() => {
+        alert('Yay! ❤️ Can’t wait for our date!');
+    }, 500);
 });
